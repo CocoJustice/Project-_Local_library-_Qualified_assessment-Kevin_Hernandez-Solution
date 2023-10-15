@@ -5,14 +5,11 @@ function findAuthorById(authors, id) {
 function findBookById(books, id) {
   return books.find((book) => book.id === id);
 }
-
 function partitionBooksByBorrowedStatus(books) {
 const returned = books.filter((book) => book.borrows[0].returned);
  const nonreturned = books.filter ((book) => !book.borrows[0].returned);
  return [nonreturned, returned];
 }
-
-
 function getBorrowersForBook(book, accounts) {
    const { borrows } = book;
    const renters = borrows.map(({ id, returned })=> {
@@ -37,3 +34,4 @@ module.exports = {
  partitionBooksByBorrowedStatus,
  getBorrowersForBook,
 };
+

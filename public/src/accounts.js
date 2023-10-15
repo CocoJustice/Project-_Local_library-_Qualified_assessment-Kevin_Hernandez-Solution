@@ -13,18 +13,15 @@ function sortAccountsByLastName(accounts) {
 function getTotalNumberOfBorrows(account, books) {
  const { id } = account;
  let total = 0;
-
  for (let book in books) {
    const { borrows } = books[book];
    borrows.forEach((element) => {
      if (element.id === id) {
-       total++;
-     }
+       total++; }
    });
 }
  return total;
 }
-
 function getBooksPossessedByAccount(account, books, authors) {
 const possessed = [];
  books.map((book) => {
@@ -37,7 +34,6 @@ const possessed = [];
  });
  return possessed;
 }
-
 module.exports = {
  findAccountById,
  sortAccountsByLastName,
